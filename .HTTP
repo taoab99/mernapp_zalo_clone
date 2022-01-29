@@ -22,13 +22,13 @@ Content-Type: application/json
 }
 
 ### 
-POST http://localhost:3001/user/signin
+POST https://appchat-mern-zalo-clone.herokuapp.com/user/signin
 Content-Type: application/json
 
 {
     "email": "khactao99@gmail.com",
-    "password": "buikhactao",
-    "confirmPasword": "buikhactao"
+    "password": "buikhactao1999@",
+    "confirmPasword": "buikhactao1999@"
 }
 ###
 POST http://localhost:3001/user/signup

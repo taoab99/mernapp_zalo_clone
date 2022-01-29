@@ -17,8 +17,6 @@ const io = new Server(httpServer, {
     }
 });
 
-console.log(process.env.HTTP_CORS);
-
 // const server = require('http').Server(app);
 // const io = require('socket.io')(server, {
 //     cors: {
