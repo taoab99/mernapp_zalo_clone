@@ -1,0 +1,82 @@
+#
+GET http://localhost:3001
+
+###
+POST http://localhost:3001/user/checkmail
+Content-Type: application/json
+
+{
+    "email": "khactao99@gmail.com",
+    "pasword": "buikhactao",
+    "confirmPasword": "buikhactao",
+    "firstName": "BÙI KHẮC",
+    "lastName": "TẢO"
+}
+
+### 
+POST http://localhost:3001/user/refeshToken
+Content-Type: application/json
+
+{
+"refeshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtoYWN0YW85OUBnbWFpbC5jb20iLCJpZCI6IjYxYzc1MjYxNTkyNzZiOTNhNDU4YzVjOCIsImlhdCI6MTY0MjM0Njc3N30.xrVv2eelhmJT-5Xo42r-pyRH0I58fmpRfXSo0bYHbUE"
+}
+
+### 
+POST http://localhost:3001/user/signin
+Content-Type: application/json
+
+{
+    "email": "khactao99@gmail.com",
+    "password": "buikhactao",
+    "confirmPasword": "buikhactao"
+}
+###
+POST http://localhost:3001/user/signup
+Content-Type: application/json
+
+{
+    "email": "khactao99@gmail.com",
+    "pasword": "buikhactao",
+    "confirmPasword": "buikhactao",
+    "firstName": "BÙI KHẮC",
+    "lastName": "TẢO",
+    "passPort": "5555"
+}
+
+###
+
+// lấy tất cả users trong database
+### 
+GET http://localhost:3001/user/getuser
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtoYWN0YW85OUBnbWFpbC5jb20iLCJpZCI6IjYxYzc1MjYxNTkyNzZiOTNhNDU4YzVjOCIsImlhdCI6MTY0MjI2ODY5OSwiZXhwIjoxNjQyMjY4NzU5fQ.iTEBDA1bHbnXlNp3z9NJ0ekvtTooK_WAYHZeXpGMAvU
+
+// tạo tin nhắn
+###
+POST http://localhost:3001/message
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtoYWN0YW85OUBnbWFpbC5jb20iLCJpZCI6IjYxYzc1MjYxNTkyNzZiOTNhNDU4YzVjOCIsImlhdCI6MTY0MTIyMjIxMiwiZXhwIjoxNjQxMjI1ODEyfQ.T6N0ymh91ns5hERKVLGU-uPRi4XwUmuYtxk8fRznpqc
+Content-Type: application/json
+
+{
+    "conversationId": "61d319bc66ae409cb677b695",
+    "senderId": "61cf134375297c3d00a802eb",
+    "text": "tin nhắn 2"
+}
+
+// lấy ra tin nhắn
+###
+GET  http://localhost:3001/message/?conversationId=61d07e51c79403000542e012
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtoYWN0YW85OUBnbWFpbC5jb20iLCJpZCI6IjYxYzc1MjYxNTkyNzZiOTNhNDU4YzVjOCIsImlhdCI6MTY0MTIyMjIxMiwiZXhwIjoxNjQxMjI1ODEyfQ.T6N0ymh91ns5hERKVLGU-uPRi4XwUmuYtxk8fRznpqc
+
+// lấy ra hộp chát 
+
+###
+GET  http://localhost:3001/conversation?useId=61b629bd1f1ca19f92b0b922&reverId=61b0dd396992227633534bb4
+
+### 
+POST http://localhost:3001/conversation
+Content-Type: application/json
+
+{
+    "senderId": "61b0dd396992227633534bb4",
+    "receverId": "61b6368693a35a288677a821"
+}
