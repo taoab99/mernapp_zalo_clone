@@ -56,7 +56,7 @@ class UserController {
                     message: "mật khẩu không trùng khớp"
                 });
 
-            let testAccount = await nodemailer.createTransport({
+            let testAccount = nodemailer.createTransport({
                 service: "gmail",
                 auth: {
                     user: process.env.EMAILNAME, // generated ethereal user
@@ -76,12 +76,16 @@ class UserController {
             }
 
             testAccount.sendMail(emailOptions, async (error, info) => {
-                if (error) return res.status(400).json({ message: error });
-                res.status(200).json(
-                    {
-                        success: true,
-                        message: "mã kích hoạt được gửi tới email của bạn "
-                    });
+                if (error) {
+                    return res.status(400).json({ message: error });
+                }
+                else {
+                    res.status(200).json(
+                        {
+                            success: true,
+                            message: "mã kích hoạt được gửi tới email của bạn "
+                        });
+                }
             })
         } catch (error) {
             console.log('lỗi', error)
