@@ -58,6 +58,9 @@ class UserController {
 
             let testAccount = nodemailer.createTransport({
                 service: "gmail",
+                host: 'smtp.gmail.com',
+                port: 465,
+                secure: true,
                 auth: {
                     user: process.env.EMAILNAME, // generated ethereal user
                     pass: process.env.EMAILPASSWORD, // generated ethereal password
